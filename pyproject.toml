@@ -19,6 +19,9 @@ dynamic = ["version"]
 requires = ["pdm-pep517>=1.0"]
 build-backend = "pdm.pep517.api"
 
+[project.urls]
+repository = "https://github.com/Bing-su/sdsim"
+
 [project.scripts]
 sdsim = "sdsim.__main__:main"
 
