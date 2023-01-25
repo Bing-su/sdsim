@@ -1,6 +1,5 @@
 [project]
 name = "sdsim"
-version = "0.1.0.dev0"
 description = "a similarity calculatior for stable diffusion checkpoints"
 authors = [
     {name = "dowon", email = "ks2515@naver.com"},
@@ -14,10 +13,14 @@ dependencies = [
 requires-python = ">=3.8"
 readme = "README.md"
 license = {text = "MIT"}
+dynamic = ["version"]
 
 [build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
+requires = ["pdm-pep517>=1.0"]
+build-backend = "pdm.pep517.api"
+
+[project.scripts]
+sdsim = "sdsim.__main__:main"
 
 [tool.pdm.dev-dependencies]
 dev = [
@@ -27,6 +30,10 @@ dev = [
     "ruff",
     "ipywidgets",
 ]
+
+[tool.pdm.version]
+source = "file"
+path = "sdsim/__version__.py"
 
 [tool.pdm.scripts]
 isort = "isort ."
