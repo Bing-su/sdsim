@@ -7,7 +7,7 @@ from typing import Any
 
 import numpy as np
 import torch
-import torch.nn.functional as F
+import torch.nn.functional as F  # noqa: N812
 from safetensors.torch import load_file
 from torch import Tensor, nn
 from tqdm.auto import tqdm
@@ -130,7 +130,7 @@ def similarity(
     result["base"] = base_model.dict()
 
     if verbose:
-        tqdm.write(str(base) + "\n")
+        tqdm.write(str(base_model) + "\n")
 
     map_attn_a = {}
     map_rand_input = {}
